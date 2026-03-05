@@ -11,7 +11,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(35, 35, 35, 0.708);
+    background-color: #8b8680;
 }
 
 header {
@@ -23,7 +23,7 @@ header {
     align-items: center;
     height: 80px;
     width: 100%;
-    background-color: rgba(35, 35, 35, 0.969);
+    background-color: rgba(35, 35, 35, 0.972);
 }
 
 #dayNightToggle{
@@ -66,7 +66,7 @@ a:hover{
     align-items: center;
     width: 100%;
     height: 60vh;
-    border-bottom: 2px red solid;
+    background-color: #7e7a75;
 }
 
 .aboutMe{
@@ -141,7 +141,7 @@ a:hover{
     background-color: rgba(35, 35, 35, 0.969);
     animation: fadeIn both ;
     animation-timeline: view();
-    animation-range: entry 5% cover 80vh;
+    animation-range: entry 10% cover 80vh;
     overflow: hidden;
     justify-content: center;
 }
@@ -149,7 +149,7 @@ a:hover{
 #projectImage{
     height: 200px;
     width: auto;
-    border-bottom: 2px orange solid;
+    border-bottom: 2px #ff6e4a solid;
 }
 
 @keyframes fadeIn {
@@ -175,7 +175,7 @@ a:hover{
     width: 100%;
     height: fit-content;
     background-color: rgb(35,35,35);
-    border-top: 2px orange solid;
+    border-top: 2px #ff6e4a solid;
 }
 
 .contactInfo {
