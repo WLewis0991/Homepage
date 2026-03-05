@@ -24,6 +24,7 @@ header {
 
 #infoContainer{
     display: flex;
+    flex-wrap: wrap-reverse;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -32,7 +33,7 @@ header {
 }
 
 .aboutMe{
-    width: 30%;
+    width: 400px;
     height: 200px;
     border: 2px black solid;
 }
@@ -49,12 +50,28 @@ header {
     display: grid;
     grid-area: 700px;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-row: inherit;
+    gap: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px
+}
+
+@media (max-width: 1000px){
+    #projectsContainer{
+        grid-template-columns: 1fr 1fr;
+        grid-row: inherit;
+    }
+}
+
+@media (max-width: 675px){
+    #projectsContainer{
+        grid-template-columns: 1fr;
+    }
 }
 
 .projectCard{
     width: 300px;
     height: 400px;
-    margin: 80px 50px;
     border: 2px black solid;
     background-color: aqua;
 }
@@ -70,7 +87,7 @@ header {
 }
 
 .contactInfo {
-    width: 30vw;
+    width: 400px;
     height: 200px;
     border: 2px black solid;
 }
