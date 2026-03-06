@@ -21,9 +21,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 70px;
     width: 100%;
-    background-color: rgba(35, 35, 35, 0.972);
+    background-color: rgba(50, 50, 50, 0.826);
+    backdrop-filter: blur(12px);
 }
 
 #dayNightToggle{
@@ -96,10 +97,10 @@ a:hover{
     padding-bottom: 100px
 }
 
-@media (max-width: 1000px){
+@media (max-width: 1111px){
     #infoContainer{
         height: 80vh;
-        margin: 15px;
+
     }
     #projectsContainer{
         grid-template-columns: 1fr 1fr;
@@ -112,8 +113,14 @@ a:hover{
 }
 
 @media (max-width: 675px){
-
-
+    #dayNightToggle{
+        font-size: 1.5em;
+    }
+    .aboutMe{
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
     .aboutMePicture{
         width: 60vw;
         height: auto;
@@ -138,25 +145,40 @@ a:hover{
     width: 300px;
     height: 400px;
     border-radius: 30px;
-    background-color: rgba(35, 35, 35, 0.969);
+    background-color: rgba(35, 35, 35, 0.311);
     animation: fadeIn both ;
     animation-timeline: view();
-    animation-range: entry 10% cover 80vh;
+    animation-range: entry 15% cover 80vh;
     overflow: hidden;
     justify-content: center;
+    transition: ease 800ms;
+}
+.projectCard:hover {
+    animation: pulse 1s forwards;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.486);
+    transition: box-shadow 0.3s ease;
+
 }
 
-#projectImage{
-    height: 200px;
-    width: auto;
-    border-bottom: 2px #ff6e4a solid;
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1.05); }
 }
+#projectImage{
+    height: auto;
+    width: 300px;
+    border-bottom: 2px #ff6e4a solid;
+    transition: ease 500ms;
+}
+
+
 
 @keyframes fadeIn {
   from {
     filter: blur(6px);
     opacity: 0;
-    transform: translateY(100px) scale(0.8);
+    transform: translateY(100px) scale(0.7);
   }
 
   to {
@@ -164,6 +186,12 @@ a:hover{
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+#projectDescription{
+    text-align: center;
+    color: whitesmoke;
+    padding: 30px;
 }
 
 
@@ -174,20 +202,25 @@ a:hover{
     align-items: center;
     width: 100%;
     height: fit-content;
-    background-color: rgb(35,35,35);
+    background-color: rgba(50, 50, 50, 0.733);
     border-top: 2px #ff6e4a solid;
 }
 
 .contactInfo {
+    text-align: center;
+    font-size: 1.5em;
+    color: whitesmoke;
     margin: 30px 0;
     width: 400px;
     height: 200px;
-    border: 2px black solid;
 }
 
 .contactPicture {
-    height: 200px;
-    width: 200px;
-    border: 2px black solid;
+    height: 300px;
+    width: 300px;
+    border: none;
+    border-radius: 50%;
+    margin: 10px;
+
     
 }
