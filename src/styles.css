@@ -1,5 +1,26 @@
 /* Style sheet */
 
+:root{
+    --body-color: #8b8680;
+    --base-color:rgba(50, 50, 50, 0.826);
+    --accent-color: #ff6e4a;
+    --text-color: whitesmoke;
+    --info-color:  #7e7a75;
+    --card-color: rgba(35, 35, 35, 0.311);
+}
+
+.lightmode{
+    --base-color: #e1dfe3;
+    --accent-color: #f25b86;
+    --text-color: #2a2a2a;
+    --info-color: #eae9eb;
+    --body-color: #f1f1f2;
+    --card-color: #eae9ea;
+
+}
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -11,7 +32,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #8b8680;
+    background-color: var(--body-color);
 }
 
 header {
@@ -23,7 +44,7 @@ header {
     align-items: center;
     height: 70px;
     width: 100%;
-    background-color: rgba(50, 50, 50, 0.826);
+    background-color: var(--base-color);
     backdrop-filter: blur(12px);
 }
 
@@ -52,8 +73,9 @@ header {
 
 a {
        text-decoration: none;
-    color: whitesmoke;
+    color: var(--text-color);
     transition: ease 500ms;
+    cursor: pointer;
 }
 
 a:hover{
@@ -67,12 +89,13 @@ a:hover{
     align-items: center;
     width: 100%;
     height: 60vh;
-    background-color: #7e7a75;
+    background-color: var(--info-color);
+    border-bottom: var(--accent-color) 4px solid;
 }
 
 .aboutMe{
     font-size: 1.4em;
-    color: whitesmoke;
+    color: var(--text-color);
     width: 400px;
     height: 200px;
 
@@ -83,6 +106,7 @@ a:hover{
     width: 400px;
     border: none;
     border-radius: 50%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.486);
     
 }
 
@@ -92,7 +116,7 @@ a:hover{
     grid-area: 700px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-row: inherit;
-    gap: 100px;
+    gap: 6em;
     padding-top: 100px;
     padding-bottom: 100px
 }
@@ -141,23 +165,29 @@ a:hover{
 
 .projectCard{
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: subgrid;
+    grid-row: span 2;
+    gap: 0;
     width: 300px;
     height: 400px;
     border-radius: 30px;
-    background-color: rgba(35, 35, 35, 0.311);
+    background-color: var(--card-color);
     animation: fadeIn both ;
     animation-timeline: view();
     animation-range: entry 15% cover 80vh;
     overflow: hidden;
     justify-content: center;
     transition: ease 800ms;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.486);
 }
 .projectCard:hover {
     animation: pulse 1s forwards;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.486);
     transition: box-shadow 0.3s ease;
 
+}
+.shifted{
+    margin: 50px;
 }
 
 @keyframes pulse {
@@ -166,10 +196,11 @@ a:hover{
     100% { transform: scale(1.05); }
 }
 #projectImage{
-    height: auto;
-    width: 300px;
-    border-bottom: 2px #ff6e4a solid;
+    height: 200px;
+    width: auto;
+    border-bottom: 2px var(--accent-color) solid;
     transition: ease 500ms;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.786);
 }
 
 
@@ -189,11 +220,45 @@ a:hover{
 }
 
 #projectDescription{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    color: whitesmoke;
+    color: var(--text-color);
     padding: 30px;
+    font-size: 1.15em;
+    max-width: 280px;
 }
 
+
+#hyperlinks{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.hidden{
+    display: none;
+}
+
+.githubLink {
+    height: 40px;
+}
+
+.githubLinkLight{
+    height: 40px;
+}
+
+.demoLink{
+    height: 30px;
+}
+
+.demoLinkLight{
+    height: 30px;
+}
 
 #contactContainer{
     display: flex;
@@ -202,14 +267,14 @@ a:hover{
     align-items: center;
     width: 100%;
     height: fit-content;
-    background-color: rgba(50, 50, 50, 0.733);
-    border-top: 2px #ff6e4a solid;
+    background-color: var(--base-color);
+    border-top: 2px var(--accent-color) solid;
 }
 
 .contactInfo {
     text-align: center;
     font-size: 1.5em;
-    color: whitesmoke;
+    color: var(--text-color);
     margin: 30px 0;
     width: 400px;
     height: 200px;
@@ -221,6 +286,8 @@ a:hover{
     border: none;
     border-radius: 50%;
     margin: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.486);
+
 
     
 }
